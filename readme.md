@@ -1,12 +1,6 @@
 ## @joegesualdo/get-youtube-subtitles-node [![Build Status](https://travis-ci.org/joegesualdo/get-youtube-subtitles-node.svg?branch=master)](https://travis-ci.org/joegesualdo/get-youtube-subtitles-node)
 > Get the subtitles of a youtube video.
 
-## Highlights
-
-- Highlight 1
-- Highlight 2
-- Highlight 3
-
 ## Install
 ```
 $ npm install --save @joegesualdo/get-youtube-subtitles-node 
@@ -14,9 +8,17 @@ $ npm install --save @joegesualdo/get-youtube-subtitles-node
 
 ## Usage
 ```javascript
-var @joegesualdo/getYoutubeSubtitlesNode = require("@joegesualdo/getYoutubeSubtitlesNode").default
+var getYoutubeSubtitles = require('./../index.js');
 
-// insert code example here
+let videoId = 'q_q61B-DyPk'
+
+getYoutubeSubtitles(videoId)
+.then(subtitles => {
+  console.log(subtitles)
+})
+.catch(err => {
+  console.log(err)
+})
 ```
 
 ## Test
@@ -24,28 +26,37 @@ var @joegesualdo/getYoutubeSubtitlesNode = require("@joegesualdo/getYoutubeSubti
 $ npm test
 ```
 ## API
-### `methodName(arg1, arg2)`
-> What does this method do?
+### `getYoutubeSubtitles(youtubeVideoId)`
+> Returns a promise that passes the resulting subtitles json.
 
 | Name | Type | Description |
 |------|------|-------------|
-| arg1 | `Array` | Test description|
-| arg2 | `String` | Test description|
+| youtubeVideoId | `Number` | The id of the video you want to get the subtitles for |
 
-Returns: `Array`, of things
+Returns: `Promise`, that passes the resulting subtitles.
 
 ```javascript
-var @joegesualdo/getYoutubeSubtitlesNode = require("@joegesualdo/get-youtube-subtitles-node").default
+var getYoutubeSubtitles = require('./../index.js');
 
-// insert method example here
+let videoId = 'q_q61B-DyPk'
+
+getYoutubeSubtitles(videoId)
+.then(subtitles => {
+  console.log(subtitles)
+})
+.catch(err => {
+  console.log(err)
+})
 ```
+
 ## Build
 ```
 $ npm run build
 ```
 
 ## Related
-- [example-package]() - Add description of the example package here.
+- [vtt-to-json](https://github.com/joegesualdo/vtt-to-json) - Convert vtt to json.
+- [get-youtube-subtitle-url-node](https://github.com/joegesualdo/get-youtube-subtitle-url-node) - Get the url for a youtube video's subtitles.
 
 ## License
 MIT © [Joe Gesualdo]()
