@@ -2,11 +2,11 @@ var getYoutubeSubtitleUrl = require('@joegesualdo/get-youtube-subtitle-url-node'
 var reqwest = require('reqwest')
 var vttToJson = require('vtt-to-json');
 
-function getYoutubeSubtitles(id) {
+function getYoutubeSubtitles(id, options) {
+  let type = options.type || 'either';
   return new Promise((resolve, reject) => {
-    getYoutubeSubtitleUrl(id)
+    getYoutubeSubtitleUrl(id, {type: type})
     .then((result) => {
-    getYoutubeSubtitleUrl(id)
       reqwest(result.url, function (resp) {
         vttToJson(resp)
         .then(json => {

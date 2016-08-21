@@ -26,12 +26,17 @@ getYoutubeSubtitles(videoId)
 $ npm test
 ```
 ## API
-### `getYoutubeSubtitles(youtubeVideoId)`
+### `getYoutubeSubtitles(youtubeVideoId, options)`
 > Returns a promise that passes the resulting subtitles json.
 
 | Name | Type | Description |
 |------|------|-------------|
 | youtubeVideoId | `Number` | The id of the video you want to get the subtitles for |
+
+### Options
+| Name | Type | Default | Options |Description |
+|------|------|-------------|-----|------|
+| type | `String ` | `either` | `auto`, `nonauto`, `either` | The id of the video you want to get the subtitles for |
 
 Returns: `Promise`, that passes the resulting subtitles.
 
@@ -40,7 +45,7 @@ var getYoutubeSubtitles = require('./../index.js');
 
 let videoId = 'q_q61B-DyPk'
 
-getYoutubeSubtitles(videoId)
+getYoutubeSubtitles(videoId, {type: 'nonauto'})
 .then(subtitles => {
   console.log(subtitles)
 })
