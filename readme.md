@@ -8,7 +8,7 @@ $ npm install --save @joegesualdo/get-youtube-subtitles-node
 
 ## Usage
 ```javascript
-var getYoutubeSubtitles = require('./../index.js');
+var getYoutubeSubtitles = require('@joegesualdo/get-youtube-subtitles-node');
 
 let videoId = 'q_q61B-DyPk'
 
@@ -41,7 +41,7 @@ $ npm test
 Returns: `Promise`, that passes the resulting subtitles.
 
 ```javascript
-var getYoutubeSubtitles = require('./../index.js');
+var getYoutubeSubtitles = require('@joegesualdo/get-youtube-subtitles-node');
 
 let videoId = 'q_q61B-DyPk'
 
