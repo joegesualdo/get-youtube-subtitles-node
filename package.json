@@ -25,7 +25,7 @@
   "dependencies": {
     "@joegesualdo/get-youtube-subtitle-url-node": "0.0.7",
     "reqwest": "^2.0.5",
-    "vtt-to-json": "0.0.2",
+    "vtt-to-json": "0.0.6",
     "xhr2": "^0.1.3"
   }
 }
