@@ -8,7 +8,6 @@ function getYoutubeSubtitles(id, options) {
     if (type === 'nonauto') {
       getYoutubeSubtitleUrl(id, {type: 'nonauto'})
       .then((result) => {
-        // console.log(result.url)
         reqwest(result.url, function (resp) {
           vttToJson(resp)
           .then(nonAutoSubtitles => {
@@ -19,26 +18,28 @@ function getYoutubeSubtitles(id, options) {
                 .then(autoSubtitles => {
                   autoSubtitles.forEach(autoSection => {
                     autoSection.words.forEach(autoWord => {
-                      let a_id;
+                      let a_ids = [];
                       nonAutoSubtitles.forEach((section, id) => {
-                        if(autoWord.time >= section.start && autoWord.time <= section.end) {
-                          a_id = id
+                        if(autoWord.time >= (section.start - 500) && autoWord.time <= (section.end + 500)) {
+                          a_ids.push(id)
                         }
                       })
-                      if (a_id) {
-                        var s = nonAutoSubtitles[a_id].words.map(w => {
-                          return w.word
-                        })
-                        if (s.indexOf(autoWord.word)){
-                          console.log(`word '${autoWord.word}' is not in ${s}`)
-                        }
-                        nonAutoSubtitles[a_id].words.forEach((word, i) => {
-                          if (word.word.toLowerCase() == autoWord.word.toLowerCase()) {
-                            nonAutoSubtitles[a_id].words[i].time = autoWord.time
-                          } else {
+                      if (a_ids.length > 0) {
+                        a_ids.forEach(a_id => {
+                          var s = nonAutoSubtitles[a_id].words.map(w => {
+                            return w.word
+                          })
+                          if (s.indexOf(autoWord.word) == -1){
+                            if (nonAutoSubtitles[a_id - 0]) {
+                            }
                           }
+                          nonAutoSubtitles[a_id].words.forEach((word, i) => {
+                            if (word.word.toLowerCase() == autoWord.word.toLowerCase()) {
+                              nonAutoSubtitles[a_id].words[i].time = autoWord.time
+                            } else {
+                            }
+                          })
                         })
-                        // console.log(nonAutoSubtitles[a_id])
                       }
                     })
                   })
@@ -78,38 +79,6 @@ function getYoutubeSubtitles(id, options) {
         reject(err)
       })
     }
-    
-
-            // autoSubtitles.forEach(autoSection => {
-            //   autoSection.words.forEach(autoWord => {
-            //     let a_id;
-            //     nonAutoSubtitles.forEach((section, id) => {
-            //       if(autoWord.time > section.start && autoWord.time < section.end) {
-            //         a_id = id
-            //       }
-            //     })
-            //     if (a_id) {
-            //       nonAutoSubtitles[a_id].words.forEach((word, i) => {
-            //         if (word.word == autoWord.word) {
-            //           nonAutoSubtitles[a_id].words[i].time = autoWord.time
-            //           // console.log(nonAutoSubtitles[a_id].words)
-            //         }
-            //       })
-            //       // console.log(nonAutoSubtitles[a_id])
-            //     }
-            //   })
-            // })
-  //         })
-  //         .catch(err => {
-  //           reject(err)
-  //         })
-  //       })
-  //     })
-  //     .catch(err => {
-  //       reject(err)
-  //     })
-  //   }
-  //
   })
 }
 

@@ -4,7 +4,8 @@ var getYoutubeSubtitles = require('./../index.js');
 // let id = 'q_q61B-DyPk'
 // let id = '_WkM8K_G4lM'
 // let id = '3gilXX1vmlA'
-let id = 'wHkK6mbFUTk'
+// let id = 'wHkK6mbFUTk'
+let id = 'u2ZydUXdLUo'
 // let autoWords = []
 // let nonAutoWords = []
 // getYoutubeSubtitles(id, {type: 'nonauto'})
@@ -66,28 +67,30 @@ getYoutubeSubtitles(id, {type: 'nonauto'})
   let hasTime = 0;
   let doesNotHaveTime = 0;
   let lastOne = 0;
-  nonAutoSubtitles.forEach(section => {
-    section.words.forEach((word, i, ws) => {
-      if (i === (ws.length - 1)) {
-        if (i > 0) {
-          if (!word.time && ws[i - 1].time) {
-            lastOne = lastOne + 1;
-          } else {
-            // console.log(ws)
-          }
-        }
-      }
-      if (word.time) {
-        hasTime = hasTime + 1;
-      } else {
-        doesNotHaveTime = doesNotHaveTime + 1
-      } 
-    })
-  })
-  console.log(hasTime)
-  console.log(doesNotHaveTime)
-  console.log(lastOne)
-  console.log((hasTime/(hasTime + doesNotHaveTime)) * 100, '%')
+  // nonAutoSubtitles.forEach(section => {
+  //   section.words.forEach((word, i, ws) => {
+  //     if (i === (ws.length - 1)) {
+  //       if (i > 0) {
+  //         if (!word.time && ws[i - 1].time) {
+  //           lastOne = lastOne + 1;
+  //         } else {
+  //           // console.log(ws)
+  //         }
+  //       }
+  //     }
+  //     if (word.time) {
+  //       hasTime = hasTime + 1;
+  //     } else {
+  //       doesNotHaveTime = doesNotHaveTime + 1
+  //     } 
+  //   })
+  // })
+  // console.log(hasTime)
+  // console.log(doesNotHaveTime)
+  // console.log(lastOne)
+  // console.log(((hasTime + lastOne)/(hasTime + doesNotHaveTime)) * 100, '%')
+  var result = {};
+  console.log(nonAutoSubtitles[69])
 })
 .catch(err => {
   console.log(err)
