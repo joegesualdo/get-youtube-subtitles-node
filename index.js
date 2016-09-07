@@ -20,7 +20,7 @@ function getYoutubeSubtitles(id, options) {
                     autoSection.words.forEach(autoWord => {
                       let a_ids = [];
                       nonAutoSubtitles.forEach((section, id) => {
-                        if(autoWord.time >= (section.start - 500) && autoWord.time <= (section.end + 500)) {
+                        if(autoWord.time >= (section.start) && autoWord.time <= (section.end)) {
                           a_ids.push(id)
                         }
                       })

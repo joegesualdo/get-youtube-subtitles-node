@@ -90,7 +90,42 @@ getYoutubeSubtitles(id, {type: 'nonauto'})
   // console.log(lastOne)
   // console.log(((hasTime + lastOne)/(hasTime + doesNotHaveTime)) * 100, '%')
   var result = {};
-  console.log(nonAutoSubtitles[69])
+  console.log(nonAutoSubtitles[13])
+  // var un = 0;
+  // var wordCount = 0
+  // nonAutoSubtitles.forEach(sub => {
+  //   sub.words.forEach(word => {
+  //     wordCount = wordCount + 1
+  //     if (!word.time) {
+  //       un = un + 1
+  //     }
+  //   })
+  // })
+  // console.log(un)
+  // console.log(wordCount)
+  //
+  var words = []
+  var text = []
+  nonAutoSubtitles.forEach(sub => {
+    sub.words.forEach(word => {
+      words.push(word)
+      text.push(word.word)
+    })
+  })
+  // var gone = 0
+  // words.forEach((word, index) => {
+  //   if (words[index] === undefined) {
+  //     // console.log([words[index], words[index-1], words[index+1]])
+  //     if (words[index - 1] === undefined) {
+  //       if (words[index + 1] === undefined) {
+  //         gone = gone + 1;
+  //       }
+  //     }
+  //   }
+  // })
+  console.log(words)
+  console.log(text.join(' ').indexOf('recent weeks'))
+  console.log(words[30])
 })
 .catch(err => {
   console.log(err)
