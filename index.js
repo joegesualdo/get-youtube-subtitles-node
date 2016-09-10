@@ -9,10 +9,12 @@ function getYoutubeSubtitles(id, options) {
       getYoutubeSubtitleUrl(id, {type: 'nonauto'})
       .then((result) => {
         reqwest(result.url, function (resp) {
+          console.log(result.url)
           vttToJson(resp)
           .then(nonAutoSubtitles => {
             getYoutubeSubtitleUrl(id, {type: 'auto'})
             .then((result) => {
+              console.log(result.url)
               reqwest(result.url, function (resp) {
                 vttToJson(resp)
                 .then(autoSubtitles => {

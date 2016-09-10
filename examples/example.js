@@ -4,8 +4,9 @@ var getYoutubeSubtitles = require('./../index.js');
 // let id = 'q_q61B-DyPk'
 // let id = '_WkM8K_G4lM'
 // let id = '3gilXX1vmlA'
-// let id = 'wHkK6mbFUTk'
-let id = 'u2ZydUXdLUo'
+let id = 'wHkK6mbFUTk'
+// let id = 'TImPW-khOwwu'
+// let id = '5IDQDoxXHm0'
 // let autoWords = []
 // let nonAutoWords = []
 // getYoutubeSubtitles(id, {type: 'nonauto'})
@@ -123,9 +124,10 @@ getYoutubeSubtitles(id, {type: 'nonauto'})
   //     }
   //   }
   // })
-  console.log(words)
-  console.log(text.join(' ').indexOf('recent weeks'))
-  console.log(words[30])
+  // console.log(words)
+  console.log(nonAutoSubtitles.length)
+  // console.log(text.join(' ').indexOf('recent weeks'))
+  // console.log(words[30])
 })
 .catch(err => {
   console.log(err)

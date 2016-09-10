@@ -1,6 +1,6 @@
 {
   "name": "@joegesualdo/get-youtube-subtitles-node",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Get the subtitles of a youtube video.",
   "repository": "joegesualdo/get-youtube-subtitles-node",
   "main": "./index.js",
@@ -25,7 +25,7 @@
   "dependencies": {
     "@joegesualdo/get-youtube-subtitle-url-node": "0.0.7",
     "reqwest": "^2.0.5",
-    "vtt-to-json": "0.0.10",
+    "vtt-to-json": "0.1.1",
     "xhr2": "^0.1.3"
   }
 }
