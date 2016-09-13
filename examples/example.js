@@ -1,3 +1,4 @@
+"use strict"
 var getYoutubeSubtitles = require('./../index.js');
 
 // let id = 'vKosBJ1Uko0'

@@ -1,3 +1,4 @@
+"use strict"
 var getYoutubeSubtitleUrl = require('@joegesualdo/get-youtube-subtitle-url-node').default
 var reqwest = require('reqwest')
 var vttToJson = require('vtt-to-json');
