@@ -1,6 +1,6 @@
 {
   "name": "@joegesualdo/get-youtube-subtitles-node",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Get the subtitles of a youtube video.",
   "repository": "joegesualdo/get-youtube-subtitles-node",
   "main": "./index.js",
