@@ -4,6 +4,7 @@ var reqwest = require('reqwest')
 var vttToJson = require('vtt-to-json');
 
 function getYoutubeSubtitles(id, options) {
+  // TODO: add the 'either' case
   let type = options.type || 'either';
   return new Promise((resolve, reject) => {
     if (type === 'nonauto') {
